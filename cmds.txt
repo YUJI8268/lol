@@ -1,0 +1,25 @@
+• Display OS version, release number, kernel version
+echo ' kernel in your system'
+uname -a
+#ubuntu version
+echo 'ubuntu version and release number '
+lsb_release -a
+• Display top 10 processes in descending order
+echo 'Top processes in descending order'
+ps aux|sort -r
+• Display processes with highest memory usage.
+echo 'Top memory consuming processes'
+ps aux --sort -rss|head
+• Display current logged in user and log name.
+echo 'current login user and log name'
+
+• Display current shell, home directory, operating system type, current Path setting,
+current working directory.
+echo ' Current shell'
+ps -p $$
+echo 'Display home directory'
+ls
+echo 'current working directory'
+pwd
+echo 'operating system type'
+uname -r 

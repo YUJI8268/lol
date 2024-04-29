@@ -1,0 +1,18 @@
+#include <stdio.h>
+ int main()
+{
+ char old[100], new[100];
+ printf("Enter old file path: ");
+ scanf("%s", old);
+ printf("Enter new file path: ");
+ scanf("%s", new);
+ if (rename(old, new) == 0)
+ {
+ printf("File renamed successfully.");
+ }
+ else
+{
+ printf("Unable to rename files");
+ }
+ return 0;
+}

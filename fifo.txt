@@ -1,0 +1,43 @@
+#include <stdio.h>
+int main()
+{
+ int i, j, k, n, no, a[50], frame[10], count = 0, isfault;
+ printf("\n Enter reference string size : ");
+ scanf("%d", &n);
+ printf("\n Enter the reference string:\n");
+ for (i = 0; i < n; i++)
+ {
+ scanf("%d", &a[i]);
+ }
+ printf("\n Enter the Frame Size : ");
+ scanf("%d", &no);
+ for (i = 0; i < no; i++)
+ {
+ frame[i] = -1;
+ }
+ j = 0;
+ printf("\treference string \t page frame\n");
+ for (i = 0; i < n; i++)
+ {
+ printf("\t\t%d\t\t", a[i]);
+ isfault = 0;
+ for (k = 0; k < no; k++)
+ {
+ if (frame[k] == a[i])
+ isfault = 1;
+ }
+ if (isfault == 0)
+ {
+ frame[j] = a[i];
+ j = (j+1) % no;
+ count++;
+ }
+ for (k = 0; k < no; k++)
+ {
+ printf("%d\t", frame[k]);
+ }
+ printf("\n\n");
+ }
+ printf("\n No of page Fault is %d", count);
+ return 0;
+}
